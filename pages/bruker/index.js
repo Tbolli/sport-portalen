@@ -1,11 +1,10 @@
 import React from 'react'
 
 function index() {
+
   return (
-    <>
-    <h1> ASD</h1>
-    </>
-  )
+    <h1>Hello world! </h1>
+    )
 }
 
 export default index

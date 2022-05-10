@@ -3,19 +3,47 @@ import Image from 'next/image'
 import Link from 'next/link' 
 import styles from '../../styles/Login.module.css'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import initFirebase from '../../firebase/initFirebase'
+import { sha256, sha224 } from 'js-sha256';
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+import { collectionGroup, getFirestore,collection, addDoc, getDocs, query, where   } from "firebase/firestore";
 
+import app from '../../firebase/initFirebase'
 
-initFirebase()
 export default function Home() {
+  const db = getFirestore(app)
+  const router = useRouter();
 
   const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [usrPassword, setUsrPassword] = useState("")
+    async function readData(){
+        try {
+          // refereance to collection
+          const UsersRef = collection(db,"Users")
+          // query 
+          const q = query(UsersRef, where("Username","==", username))
 
-  const valitadion =()=>{
+          const querySnapshot = await getDocs(q)
+          let passwodUSR =""
+          let type =""
+          querySnapshot.forEach(doc=>{
+            passwodUSR= doc.data().Password
+            type = doc.data().Type
 
+          })
+          if(valitadion(passwodUSR)==true) router.push(`/${type}?username=${username}`)
+
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+    }
     
-    return "asddd"
+    
+  const valitadion =(doc)=>{
+    if (sha256(usrPassword)===doc) return true
+    return false
   }
   return (
     <div className={styles.div_encaps}>
@@ -35,12 +63,13 @@ export default function Home() {
 
     <div className={styles.input_fields}>
       <input onChange={e => setUsername(e.target.value)} type="text" placeholder="Brukernavn:" />
-      <input onChange={e => setPassword(e.target.value)} type="text" placeholder="Passord:"/>
+      <input onChange={e => setUsrPassword(e.target.value)} type="password" placeholder="Passord:"/>
     </div>
    
 
 
-    <Link href={{pathname:"/", query:{user: valitadion()}}}><a className={styles.link_anchor}>Logg inn</a></Link>
+    <Link href={{pathname:"/", query:{user: "Thoasd"}}}><a className={styles.link_anchor}>Logg inn</a></Link>
+    <button onClick={readData}>asd</button>
     
     </div>
   )
