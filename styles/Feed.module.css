@@ -1,0 +1,31 @@
+.item{
+    display: flex;
+    flex-direction: column;
+    width: 88vw;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.item h1{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.item p{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.item span{
+    color: #707782;
+}
+.item span:first-child{
+    margin-right: 30px;
+}
+
+.lane_bottom{  
+
+}
