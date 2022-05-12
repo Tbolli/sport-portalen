@@ -4,7 +4,6 @@ import Link from 'next/link'
 import styles from '../../styles/Login.module.css'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import initFirebase from '../../firebase/initFirebase'
 import { sha256, sha224 } from 'js-sha256';
 import firebase from 'firebase/app'
 import 'firebase/firestore'
@@ -68,8 +67,7 @@ export default function Home() {
    
 
 
-    <Link href={{pathname:"/", query:{user: "Thoasd"}}}><a className={styles.link_anchor}>Logg inn</a></Link>
-    <button onClick={readData}>asd</button>
+    <button onClick={readData} className={styles.link_anchor}>Logg inn</button>
     
     </div>
   )
