@@ -5,12 +5,16 @@
     margin: 0 auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+    margin-top: 40px;
+    border-bottom: 2px solid #2A3445;
+    padding-bottom: 24px;
 }
 
 .item h1{
     font-size: 22px;
     font-weight: bold;
     margin: 0;
+    margin-bottom: 11px;
 }
 
 .item p{
@@ -27,5 +31,48 @@
 }
 
 .lane_bottom{  
+    margin-top: 7px;
+}
 
+.btn_row{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.btn_row button{
+    height: 40px;
+    background-color: #2A3445;
+    border:none;
+    border-radius: 7px;
+    color: white;
+    width: 90%; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    max-width: 315px;
+    margin-top: 13px;
+    text-align: center;
+}
+
+.btn_row button:first-child{
+    margin-right: 15px;
+}
+
+.btn_acc{
+    background-color: aqua;
+    height: 40px;
+    border:none;
+    border-radius: 7px;
+    color: white;
+    width: 90%; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    max-width: 315px;
+    margin-top: 13px;
+    text-align: center;
+}
+.btn_den{
+    background-color: rgb(255, 35, 6);
 }

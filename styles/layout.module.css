@@ -1,0 +1,29 @@
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    z-index: 100;
+    display: flex;
+}
+
+.footer_option{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    padding-top: 15px;
+}
+
+
+.footer_option_activated{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    padding-top: 12px;
+    border-top: 3px solid #05BC25 ;
+}
+
+.footer_option_activated path{
+    fill:#05BC25;
+}

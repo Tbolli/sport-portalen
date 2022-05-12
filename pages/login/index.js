@@ -32,7 +32,7 @@ export default function Home() {
             type = doc.data().Type
 
           })
-          if(valitadion(passwodUSR)==true) router.push(`/${type}?username=${username}`)
+          if(valitadion(passwodUSR)==true) router.push(`/${type}/?token=true`)
 
           } catch (e) {
             console.error("Error adding document: ", e);
