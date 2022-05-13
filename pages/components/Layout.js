@@ -4,7 +4,7 @@ import { useState } from 'react'
 import React from 'react'
 import Link from 'next/dist/client/link'
 import styles from '../../styles/layout.module.css'
-
+import ss from '../../styles/Login.module.css'
 
 
 function Layout({children}) {
@@ -22,7 +22,12 @@ function Layout({children}) {
 export default Layout
 const adminLayout =(children)=>{
   return(
+    <>
+    <Link href={"/login"}>
+        <p className={ss.tilbake}>⬅️Tilbake</p>
+    </Link>
     <main>{children}</main>
+    </>
     )
 }
 
@@ -40,6 +45,9 @@ const brukerLayout =(children, path_name)=>{
   }
     return(
         <>
+        <Link href={"/login"}>
+          <p className={ss.tilbake}>⬅️Tilbake</p>
+        </Link>
         <main>{children}</main>
         <div  className={styles.footer}>
             <div  id="feed"className={styles.footer_option}>

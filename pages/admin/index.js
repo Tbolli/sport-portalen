@@ -40,11 +40,6 @@ function index() {
   return (
     <>
     <div className={styles.input_fields}>
-
-        <Link href={"/login"}>
-        <p className={styles.tilbake}>⬅️Tilbake</p>
-        </Link>
-            
       <input onChange={e=>Name = e.target.value} type="text" placeholder="Name:" />
       <input onChange={e=>Username = e.target.value} type="text" placeholder="Username:"/>
       <input onChange={e=>DateofBirth = e.target.value} type="date" placeholder="DateofBirth:" />
